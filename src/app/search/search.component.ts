@@ -25,7 +25,15 @@ export class SearchComponent implements OnInit {
 
   onSearchGame(form: NgForm) {
     const value = form.value;
-    value.valid = true ? value.priceFrom <= value.priceTo : false;
+
+    if(value.priceFrom <= value.priceTo)
+      value.valid = true;
+    else if (!value.priceFrom)
+      value.valid = true;
+    else if (!value.priceTo)
+      value.valid = true;
+    else
+      value.valid = false;
 
     if(form.valid && value.valid){
       this.router.navigateByUrl(

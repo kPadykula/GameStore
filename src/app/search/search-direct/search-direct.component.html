@@ -1,22 +1,17 @@
-<div class="container" *ngIf="selectedItems; else goHome">
-  <app-game-list></app-game-list>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+<span *ngIf="selectedItems; then showPage else goHome"></span>
+<ng-template #showPage>
+  <div class="container">
+    <app-game-item
+      *ngFor="let game of gamesToShow; index as i;"
+      [item]="game">
+    </app-game-item>
+  </div>
+</ng-template>
 <ng-template #goHome>
   <div class="container">
     <div class="col-12">
+      <div class="text-info">
+      </div>
       <button [routerLink]="['/']" class="btn btn-primary" id="gohome">Back Home</button>
     </div>
   </div>
