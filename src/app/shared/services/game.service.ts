@@ -3,11 +3,13 @@ import {Category} from "../enums/category-enum.model";
 import {Device} from "../enums/device-enum.model";
 import {DRM} from "../enums/drm-enum.model";
 import {EventEmitter} from "@angular/core";
+import {Subscription} from "rxjs";
 
 export class GameService {
 
   gamesChanged = new EventEmitter<Game[]>();
   gameSelected = new EventEmitter<Game>();
+  itemsSelected = new EventEmitter<{category: string, device: string, drm: string, pricef: number, pricet: number}>();
 
   private games: Game[] = [
 
@@ -140,5 +142,7 @@ export class GameService {
     }
     return tableToReturn;
   }
+
+
 
 }

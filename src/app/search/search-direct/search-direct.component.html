@@ -1,1 +1,23 @@
-<p>search-direct works!</p>
+<div class="container" *ngIf="selectedItems; else goHome">
+  <app-game-list></app-game-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<ng-template #goHome>
+  <div class="container">
+    <div class="col-12">
+      <button [routerLink]="['/']" class="btn btn-primary" id="gohome">Back Home</button>
+    </div>
+  </div>
+</ng-template>

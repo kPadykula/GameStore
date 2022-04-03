@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {GameService} from "../shared/services/game.service";
 import {Category} from "../shared/enums/category-enum.model";
 import {Device} from "../shared/enums/device-enum.model";
 import {DRM} from "../shared/enums/drm-enum.model";
+import {NgForm} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -14,10 +16,29 @@ export class SearchComponent implements OnInit {
   device: Device[] = Object.values(Device);
   drm: DRM[] = Object.values(DRM);
 
-  constructor(private service: GameService) { }
+  constructor(private service: GameService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.drm[1]);
+
+  }
+
+  onSearchGame(form: NgForm) {
+    const value = form.value;
+    value.valid = true ? value.priceFrom <= value.priceTo : false;
+
+    if(form.valid && value.valid){
+      this.router.navigateByUrl(
+        '/search', {
+          state: { data: {
+                category: value.selectCategory,
+                device: value.selectDevice ,
+                drm: value.selectDrm,
+                pricef: +value.priceFrom,
+                pricet: +value.priceTo
+            }}
+        });
+    }
   }
 
 }

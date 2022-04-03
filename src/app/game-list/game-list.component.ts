@@ -8,17 +8,20 @@ import {GameService} from "../shared/services/game.service";
   styleUrls: ['./game-list.component.css']
 })
 export class GameListComponent implements OnInit {
+  //@ts-ignore
+  @Input('GameToShow') selectedGames: Game[];
   games: Game[] = [];
 
   constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
-    this.games = this.gameService.getGames();
-    this.gameService.gamesChanged
-      .subscribe(
-        (games: Game[]) => {
-          this.games = games;
-    });
+    if (!this.selectedGames)
+      this.games = this.gameService.getGames();
+      this.gameService.gamesChanged
+        .subscribe(
+          (games: Game[]) => {
+            this.games = games;
+      });
   }
 
 }
