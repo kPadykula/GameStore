@@ -1,0 +1,21 @@
+* {
+  position: sticky;
+  bottom: 0;
+  color: white;
+  max-height: 30px;
+}
+div {
+  text-align: right;
+  font-size: 0.9em;
+}
+
+#footer {
+  position: relative;
+  padding: 10px;
+}
+
+article {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}

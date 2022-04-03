@@ -10,6 +10,7 @@ import {CustomslicePipe} from "./shared/usefulTools/customslice.pipe";
 import {GameService} from "./shared/services/game.service";
 import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
         GameDetailsComponent,
         GameItemComponent,
         CustomslicePipe,
-        HomeComponent
+        HomeComponent,
+        FooterComponent
     ],
   imports: [
     BrowserModule,
