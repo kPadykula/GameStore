@@ -33,7 +33,8 @@ export class GameService {
       [
         Category.Action,
         Category.RPG,
-        Category.FPS
+        Category.FPS,
+        Category.SandBox
       ],
       Device.PS5,
       DRM.Other,
@@ -129,7 +130,7 @@ export class GameService {
   }
 
 
-  private getGameByCategory(categoryToFind: string, games: Game[]) {
+  getGameByCategory(categoryToFind: string, games: Game[]) {
     let gamesToSort = games;
     let tableToReturn: Game[] = [];
 
@@ -182,7 +183,7 @@ export class GameService {
 
 
 
-  getGameByFilters(categoryToFind: string, deviceToFind: string, drmToFind: string, min: number, max: number) {
+  getGameByFilters(categoryToFind: string, deviceToFind: string, drmToFind: string, min: any, max: any) {
     let tableToReturn = this.games.slice();
 
     if (categoryToFind.length > 1)
@@ -193,6 +194,7 @@ export class GameService {
 
     if(drmToFind.length > 1)
       tableToReturn = this.getGameByDRM(drmToFind, tableToReturn);
+
 
     tableToReturn = this.getGameByPrice(min, max, tableToReturn);
 

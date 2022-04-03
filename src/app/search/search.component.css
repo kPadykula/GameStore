@@ -12,12 +12,18 @@
 }
 
 #searchingArea {
-  background-color: rgba(204, 204, 204, 0.6);
+  background: linear-gradient(135deg, rgba(185,75,232,0.8) 0%, rgba(32,124,229,0.9) 100%);
   height: 350px;
   margin-top: 2%;
   margin-left: 3%;
   border: 1px solid black;
   border-radius: 5px;
+  transition: 0.6s;
+}
+
+#searchingArea:hover {
+  box-shadow: -5px 10px 5px 5px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
 }
 
 .left {
@@ -35,6 +41,20 @@ label {
   font-weight: normal;
 }
 
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]:focus {
+  -moz-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 input, select {
   background: rgba(0, 0, 0, 0);
   border: none;
@@ -42,13 +62,24 @@ input, select {
   border-bottom: 1px solid black;
 }
 
+.form-control:focus, select:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+}
+
 #Send {
   border: 1px solid black;
   background-color: transparent;
+  transition: 0.5s;
 }
 
+#Send:active, #Send:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+}
 #Send:active:focus {
   color: #ffffff;
   background-color: #161617;
   border-color: #494F57;
 }
+

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Game} from "../shared/models/game.model";
 import {Category} from "../shared/enums/category-enum.model";
 import {Device} from "../shared/enums/device-enum.model";
@@ -20,19 +20,26 @@ export class GameDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.route.snapshot.params['id']) {
-      //@ts-ignore
-      this.game = this.service.getGame(+this.route.snapshot.params['id']);
-      this.route.params.subscribe(
-        (params: Params) => {
-          // @ts-ignore
-          this.game = this.service.getGame(+params['id']);
-        });
+        //@ts-ignore
+        this.game = this.service.getGame(+this.route.snapshot.params['id']);
+        this.route.params.subscribe(
+          (params: Params) => {
+            // @ts-ignore
+            this.game = this.service.getGame(+params['id']);
+            //@ts-ignore
+            for (let cat of this.game.category) {
+              this.games = this.service.getGameByCategory(cat, this.service.getGames());
+            }
 
-      //@ts-ignore
-      this.games = this.service.getGameByCategory(this.game);
-      console.log(this.games);
+            console.log(this.games)
+            //@TODO Naprawic wyszukiwanie po kategorii w szczegole
+
+
+          });
+
+
+        console.log(this.game);
     }else
         this.game = this.game;
-
   }
 }
