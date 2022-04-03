@@ -1,0 +1,15 @@
+* {
+  max-height: 50px;
+}
+
+.napis {
+  font-size: 1.6rem;
+  text-align: left;
+  margin-top: 5px;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

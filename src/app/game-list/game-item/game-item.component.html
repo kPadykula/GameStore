@@ -1,0 +1,15 @@
+<div class="col-md-4" style="float: left;">
+  <div class="card" style="width: 90%;">
+    <img [src]="game.imgUrl" alt="{{ game.name + '.img'}}">
+    <div class="card-body">
+      <h5>{{ game.name }}</h5>
+      <p class="card-text">{{ game.description  | customSlice:110 }}</p>
+      <a><button class="btn"
+                 id="buyMeBtn"
+                 [routerLink]="['/game', game.id]"
+                 (click)="ScrollUp()"
+      >Buy Me!</button></a>
+    </div>
+  </div>
+</div>
+

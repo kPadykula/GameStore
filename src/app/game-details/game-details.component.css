@@ -1,0 +1,69 @@
+img {
+  max-height: 350px;
+  width: 100%;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#main {
+  margin: 20px;
+  width: 99%;
+}
+
+.header {
+}
+
+.float {
+  float: left;
+}
+
+#lista {
+  margin-left: 50px;
+  margin-top: -23px;
+  list-style: none;
+}
+
+#produkt_price {
+  height: 300px;
+
+}
+
+fieldset {
+  position: relative;
+  padding: 10px;
+  text-align: center;
+}
+
+fieldset > legend {
+  position: relative;
+  top: -30px;
+  left: -40px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-family: PlayFairOnBlack;
+}
+
+fieldset > p {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+#btnBuy {
+  width: 100%;
+  border-color: #494F57;
+}
+
+#btnBuy:active:focus {
+  color: #ffffff;
+  background-color: #161617;
+  border-color: #494F57;
+}
+
+#product_welcome {
+  border: 1px solid black;
+}
+
+.findMore {
+  margin-top: 40px;
+}

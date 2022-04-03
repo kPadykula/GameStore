@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-item
+        *ngFor="let game of games; index as i;"
+        [item]="game">
+      </app-game-item>
+    </div>
+  </div>
+</div>

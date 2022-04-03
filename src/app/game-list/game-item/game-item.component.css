@@ -1,0 +1,26 @@
+.card {
+  margin: 25px 20px;
+  display: block;
+}
+
+#buyMeBtn {
+  border: 1px solid black;
+  width: 100%;
+}
+
+img {
+  max-height: 320px;
+  height: 320px;
+  width: 100%;
+}
+
+.btn:active {
+  box-shadow: none;
+
+}
+
+#buyMeBtn:active:focus {
+  color: #ffffff;
+  background-color: #161617;
+  border-color: #494F57;
+}

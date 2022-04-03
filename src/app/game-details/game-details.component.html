@@ -1,0 +1,50 @@
+<div *ngIf="game">
+  <div class="container-fluid" id="main">
+    <div class="row header">
+      <div class="col-4" id="product_image">
+        <aside>
+          <img [src]="game.imgUrl" alt="{{ game.name + '.img' }}" class="img-fluid">
+        </aside>
+      </div>
+      <div class="col-6" id="product_welcome">
+        <article>
+          <h3>{{ game.name }}</h3>
+          <div id="category" class="position-relative">
+            <b>Category: </b>
+            <span *ngFor="let category of game.category">
+                {{ category.toString() + ' '}}
+              </span>
+          </div>
+          <div id="device">
+            <b>Device: </b>
+            {{ game.device }}
+          </div>
+          <div id="DRM" *ngIf="game.device === 'PC'">
+            <b>Platform: </b>
+            {{ game.DRM }}
+          </div>
+
+          <div id="description">
+            <p>{{ game.description }}</p>
+          </div>
+        </article>
+      </div>
+      <div class="col-2">
+        <aside id="produkt_price">
+          <fieldset class="border">
+            <legend>Buy Me!</legend>
+
+            <p>{{ game.price }} &#36; </p>
+            <button class="btn" id="btnBuy">Buy</button>
+          </fieldset>
+        </aside>
+      </div>
+    </div>
+    <div class="row findMore">
+      <hr>
+      <h4>Find more like this!</h4>
+      <app-game-list>
+      </app-game-list>
+    </div>
+  </div>
+</div>
