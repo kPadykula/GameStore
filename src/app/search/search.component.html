@@ -1,0 +1,58 @@
+<div class="container-fluid" id="main">
+  <span id="author">Photo by <a href="https://unsplash.com/@carltraw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Carl Raw</a> on <a href="https://unsplash.com/s/photos/hd-game?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </span>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3" id="searchingArea">
+        <form>
+          <div class="form-group col-12">
+            <label for="selectCategory">Category:</label>
+            <select name="selectCategory" class="form-control" id="selectCategory">
+                  <option *ngFor="let cat of category">{{ cat }}</option>
+            </select>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="selectDevice">Device:</label>
+            <select name="selectDevice" class="form-control" id="selectDevice">
+              <option *ngFor="let dev of device">{{ dev }}</option>
+            </select>
+          </div>
+
+          <div class="form-group col-12">
+            <label for="selectDrm">DRM:</label>
+            <select name="selectDrm" class="form-control" id="selectDrm">
+              <option *ngFor="let dr of drm">{{ dr }}</option>
+            </select>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-md">
+              <label>Price:</label>
+              <div class="form-floating">
+                <input type="number" class="form-control" id="priceFrom" placeholder="0">
+                <label for="priceFrom">From</label>
+              </div>
+            </div>
+            <div class="col-md">
+              <br>
+              <div class="form-floating">
+                <input type="number" class="form-control" id="priceTo" placeholder="10">
+                <label for="priceTo">To</label>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="form-row">
+            <div class="col-12">
+              <button class="btn col-12" id="Send">Search</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,54 @@
+#main {
+  background-image: url("../../assets/images/backgroud.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 400px;
+
+}
+
+#author {
+  display: none;
+}
+
+#searchingArea {
+  background-color: rgba(204, 204, 204, 0.6);
+  height: 350px;
+  margin-top: 2%;
+  margin-left: 3%;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.left {
+  float: left;
+}
+
+.btn:active {
+  box-shadow: none;
+
+}
+label {
+  font-weight: bold;
+}
+.form-floating > label {
+  font-weight: normal;
+}
+
+input, select {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+#Send {
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+#Send:active:focus {
+  color: #ffffff;
+  background-color: #161617;
+  border-color: #494F57;
+}

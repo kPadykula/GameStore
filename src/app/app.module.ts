@@ -11,6 +11,8 @@ import {GameService} from "./shared/services/game.service";
 import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
+import { SearchDirectComponent } from './search/search-direct/search-direct.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -26,7 +28,9 @@ const appRoutes: Routes = [
         GameItemComponent,
         CustomslicePipe,
         HomeComponent,
-        FooterComponent
+        FooterComponent,
+        SearchComponent,
+        SearchDirectComponent
     ],
   imports: [
     BrowserModule,
