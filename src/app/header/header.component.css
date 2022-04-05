@@ -13,3 +13,7 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.container-fluid {
+  /*background: url("/assets/images/background-color.jpg");*/
+}

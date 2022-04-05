@@ -1,0 +1,14 @@
+
+<app-search-panel></app-search-panel>
+<div class="container">
+  <div class="container-fluid" *ngIf="count">
+    We found {{ count }} <span *ngIf="count > 2; then higher else lower"></span><ng-template #higher>games</ng-template><ng-template #lower>game</ng-template>
+    <hr>
+  </div>
+  <app-game-item
+    *ngFor="let game of gamesToShow; index as i;"
+    [item]="game">
+  </app-game-item>
+</div>
+
+

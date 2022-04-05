@@ -9,7 +9,7 @@ export enum Category {
   MOBA = "MOBA",
   Simulation = "Simulation",
   Sport = "Sport",
-  Ricing = "Ricing",
+  Racing = "Ricing",
   Platformer = "Platformer",
   Adventure = "Adventure",
   Survival = "Survival",

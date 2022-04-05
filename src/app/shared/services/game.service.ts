@@ -3,11 +3,13 @@ import {Category} from "../enums/category-enum.model";
 import {Device} from "../enums/device-enum.model";
 import {DRM} from "../enums/drm-enum.model";
 import {EventEmitter} from "@angular/core";
+import {find, Subscription} from "rxjs";
 
 export class GameService {
 
   gamesChanged = new EventEmitter<Game[]>();
   gameSelected = new EventEmitter<Game>();
+  itemsSelected = new EventEmitter<{category: string, device: string, drm: string, pricef: number, pricet: number}>();
 
   private games: Game[] = [
 
@@ -31,7 +33,8 @@ export class GameService {
       [
         Category.Action,
         Category.RPG,
-        Category.FPS
+        Category.FPS,
+        Category.SandBox
       ],
       Device.PS5,
       DRM.Other,
@@ -78,7 +81,7 @@ export class GameService {
       "Assetto Corsa | Ultimate Edition",
       [
         Category.Simulation,
-        Category.Ricing,
+        Category.Racing,
         Category.Adventure
       ],
       Device.PS5,
@@ -127,17 +130,75 @@ export class GameService {
   }
 
 
-  getGameByCategory(game: Game) {
-    let gamesToSort = this.games.slice();
-    let tableToReturn: Game[] = []
-    for (let gameTab of gamesToSort) {
-      for (let category of game.category){
-        if (gameTab !== game){
-          if (gameTab.category == game.category)
-            tableToReturn.push(gameTab);
-        }
-      }
+  getGameByCategory(categoryToFind: string, games: Game[]) {
+    let gamesToSort = games;
+    let tableToReturn: Game[] = [];
+
+    for (let game of gamesToSort){
+      if (game.category.find(cat => cat === categoryToFind))
+        tableToReturn.push(game);
     }
+
+    return tableToReturn;
+  }
+
+  private getGameByDevice(deviceToFind: string, games: Game[]) {
+    let gamesToSort = games;
+    let tableToReturn: Game[] = [];
+
+    gamesToSort.find((game) => {
+      if(game.device === deviceToFind)
+          tableToReturn.push(game);
+    });
+
+    return tableToReturn;
+  }
+
+  private getGameByDRM(drmToFind: string, games: Game[]) {
+    let gamesToSort = games;
+    let tableToReturn: Game[] = [];
+
+    gamesToSort.find((game) => {
+      if(game.DRM === drmToFind)
+        tableToReturn.push(game);
+    });
+
+    return tableToReturn;
+  }
+
+  private getGameByPrice(min: number, max: number, games: Game[]) {
+    let gamesToSort = games;
+    let tableToReturn: Game[] = [];
+
+    gamesToSort.find((game) => {
+      if(!min && game.price <= max)
+        tableToReturn.push(game);
+      else if (!max && game.price >= min)
+        tableToReturn.push(game);
+      else if (game.price >= min && game.price <= max)
+        tableToReturn.push(game);
+    });
+    return tableToReturn;
+  }
+
+
+
+  getGameByFilters(categoryToFind: string, deviceToFind: string, drmToFind: string, min: any, max: any) {
+    let tableToReturn = this.games.slice();
+
+    if (categoryToFind.length > 1)
+      tableToReturn = this.getGameByCategory(categoryToFind, tableToReturn);
+
+    if(deviceToFind.length > 1)
+      tableToReturn = this.getGameByDevice(deviceToFind, tableToReturn);
+
+    if(drmToFind.length > 1)
+      tableToReturn = this.getGameByDRM(drmToFind, tableToReturn);
+
+
+    tableToReturn = this.getGameByPrice(min, max, tableToReturn);
+
+
     return tableToReturn;
   }
 

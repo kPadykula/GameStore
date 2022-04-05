@@ -43,8 +43,12 @@
     <div class="row findMore">
       <hr>
       <h4>Find more like this!</h4>
-      <app-game-list>
-      </app-game-list>
+      <div class="container-fluid align-items-center">
+        <app-game-item
+          *ngFor="let game of games; index as i;"
+          [item]="game">
+        </app-game-item>
+      </div>
     </div>
   </div>
 </div>

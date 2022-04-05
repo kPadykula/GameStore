@@ -1,6 +1,12 @@
 <div class="col-md-4" style="float: left;">
   <div class="card" style="width: 90%;">
-    <img [src]="game.imgUrl" alt="{{ game.name + '.img'}}">
+    <div id="image">
+      <img [src]="game.imgUrl" alt="{{ game.name + '.img'}}">
+      <div id="price">
+        <div id="priceImg"></div>
+        <div id="priceText">{{ game.price }}</div>
+      </div>
+    </div>
     <div class="card-body">
       <h5>{{ game.name }}</h5>
       <p class="card-text">{{ game.description  | customSlice:110 }}</p>

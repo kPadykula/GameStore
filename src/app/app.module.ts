@@ -11,10 +11,15 @@ import {GameService} from "./shared/services/game.service";
 import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchComponent } from './search/search.component';
+import { SearchDirectComponent } from './search/search-direct/search-direct.component';
+import {FormsModule} from "@angular/forms";
+import { SearchPanelComponent } from './search/search-direct/search-panel/search-panel.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
-  {path: 'game/:id', component: GameDetailsComponent }
+  {path: 'game/:id', component: GameDetailsComponent},
+  {path: 'search', component: SearchDirectComponent},
 ];
 
 @NgModule({
@@ -26,12 +31,16 @@ const appRoutes: Routes = [
         GameItemComponent,
         CustomslicePipe,
         HomeComponent,
-        FooterComponent
+        FooterComponent,
+        SearchComponent,
+        SearchDirectComponent,
+        SearchPanelComponent
     ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule
+    ],
   providers: [
     GameService
   ],
