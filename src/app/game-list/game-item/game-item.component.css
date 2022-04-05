@@ -1,3 +1,6 @@
+* {
+  font-family: SpaceGrotesk-Light;
+}
 .card {
   margin: 25px 20px;
   display: block;
@@ -23,4 +26,42 @@ img {
   color: #ffffff;
   background-color: #161617;
   border-color: #494F57;
+}
+
+#image {
+  position: relative;
+}
+
+#priceImg {
+  position: relative;
+  /*width: 80px;*/
+  /*height: 30px;*/
+  /*background-color: white;*/
+  /*top: 10px;*/
+  /*right: -30px;*/
+  /*font-size: 20px;*/
+  /*text-align: center;*/
+  /*border: 1px solid blanchedalmond;*/
+  width: 100px;
+  height: 75px;
+  color: white;
+  background: url("/assets/images/photo.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#price {
+  position: absolute;
+  top: -10px;
+  right: -50px;
+}
+
+#priceText {
+  color: black;
+  font-size: 1.4em;
+  text-align: center;
+  top: 0;
+  right: 65px;
+  font-family: PlayFairOnBlack;
+  position: absolute;
 }

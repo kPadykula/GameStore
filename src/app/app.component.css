@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+
 }
 
 @font-face {
@@ -16,4 +17,9 @@
 @font-face {
   font-family: SpaceGrotesk-Light;
   src: url("../assets/fonts/SpaceGrotesk-Regular.ttf");
+}
+
+#tlo {
+  /*Tlo cosmic */
+  /*background: url("/assets/images/background-color.jpg");*/
 }

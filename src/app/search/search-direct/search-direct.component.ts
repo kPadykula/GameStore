@@ -42,7 +42,7 @@ export class SearchDirectComponent implements OnInit {
       );
       this.count = this.gamesToShow.length;
     })
-
+    this.count = this.gamesToShow.length;
 
 
 
