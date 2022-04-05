@@ -1,19 +1,14 @@
-<span *ngIf="selectedItems; then showPage else goHome"></span>
-<ng-template #showPage>
-  <div class="container">
-    <app-game-item
-      *ngFor="let game of gamesToShow; index as i;"
-      [item]="game">
-    </app-game-item>
+
+<app-search-panel></app-search-panel>
+<div class="container">
+  <div class="container-fluid" *ngIf="count">
+    We found {{ count }} <span *ngIf="count > 2; then higher else lower"></span><ng-template #higher>games</ng-template><ng-template #lower>game</ng-template>
+    <hr>
   </div>
-</ng-template>
-<ng-template #goHome>
-  <div class="container">
-    <div class="col-12">
-      <div class="text-info">
-      </div>
-      <button [routerLink]="['/']" class="btn btn-primary" id="gohome">Back Home</button>
-    </div>
-  </div>
-</ng-template>
+  <app-game-item
+    *ngFor="let game of gamesToShow; index as i;"
+    [item]="game">
+  </app-game-item>
+</div>
+
 

@@ -1,0 +1,76 @@
+#searchingArea {
+  border: 1px solid black;
+  border-top: none;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(185,75,232,0.8) 0%, rgba(32,124,229,0.9) 100%);
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 0.6s;
+  text-align: center;
+}
+
+#tlo {
+  background-image: url("/assets/images/backgroud.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px;
+}
+
+#searchingArea:hover {
+  box-shadow: 0 10px 5px 5px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+}
+
+#priceLabel {
+  margin-left: 80%;
+}
+
+#form {
+  margin-left: 20%;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]:focus {
+  -moz-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input, select {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+input::placeholder {
+  color: rgb(15, 57, 112);
+  text-align: center;
+}
+
+input:focus::placeholder{
+  color: transparent;
+}
+
+input:focus, select:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+}
+
+.form-control:focus, select:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+}
