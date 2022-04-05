@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { SearchDirectComponent } from './search/search-direct/search-direct.component';
 import {FormsModule} from "@angular/forms";
+import { SearchPanelComponent } from './search/search-direct/search-panel/search-panel.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
         HomeComponent,
         FooterComponent,
         SearchComponent,
-        SearchDirectComponent
+        SearchDirectComponent,
+        SearchPanelComponent
     ],
     imports: [
         BrowserModule,
