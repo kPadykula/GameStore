@@ -1,3 +1,5 @@
+#tlo {
+}
 img {
   max-height: 350px;
   width: 100%;
@@ -7,10 +9,6 @@ img {
 #main {
   margin: 20px;
   width: 99%;
-
-}
-
-.header {
 }
 
 .float {
@@ -32,6 +30,8 @@ fieldset {
   position: relative;
   padding: 10px;
   text-align: center;
+  background-color: white;
+  border: 1px solid black !important;
 }
 
 fieldset > legend {
@@ -64,6 +64,7 @@ fieldset > p {
 #product_welcome {
   border: 1px solid black;
   font-family: SpaceGrotesk-Light;
+  background-color: white;
 }
 
 .findMore {

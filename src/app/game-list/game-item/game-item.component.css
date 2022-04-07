@@ -4,11 +4,10 @@
 .card {
   margin: 25px 20px;
   display: block;
-}
-
-#buyMeBtn {
-  border: 1px solid black;
-  width: 100%;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  background-color: black;
+  color: white;
+  max-height: 458px;
 }
 
 img {
@@ -17,43 +16,33 @@ img {
   width: 100%;
 }
 
-.btn:active {
-  box-shadow: none;
-
-}
-
-#buyMeBtn:active:focus {
-  color: #ffffff;
-  background-color: #161617;
-  border-color: #494F57;
-}
-
 #image {
   position: relative;
+  width: 100%;
 }
 
-#priceImg {
-  position: relative;
-  /*width: 80px;*/
-  /*height: 30px;*/
-  /*background-color: white;*/
-  /*top: 10px;*/
-  /*right: -30px;*/
-  /*font-size: 20px;*/
-  /*text-align: center;*/
-  /*border: 1px solid blanchedalmond;*/
-  width: 100px;
-  height: 75px;
-  color: white;
-  background: url("/assets/images/photo.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+/*#priceImg {*/
+/*  position: relative;*/
+/*  !*width: 80px;*!*/
+/*  !*height: 30px;*!*/
+/*  !*background-color: white;*!*/
+/*  !*top: 10px;*!*/
+/*  !*right: -30px;*!*/
+/*  !*font-size: 20px;*!*/
+/*  !*text-align: center;*!*/
+/*  !*border: 1px solid blanchedalmond;*!*/
+/*  width: 50px;*/
+/*  height: 75px;*/
+/*  !*color: white;*!*/
+/*  !*background: url("/assets/images/photo.svg");*!*/
+/*  !*background-repeat: no-repeat;*!*/
+/*  !*background-size: contain;*!*/
+
+/*}*/
 
 #price {
-  position: absolute;
-  top: -10px;
-  right: -50px;
+  position: relative;
+  background-color: white;
 }
 
 #priceText {
@@ -64,4 +53,10 @@ img {
   right: 65px;
   font-family: PlayFairOnBlack;
   position: absolute;
+  background-color: white;
+  top: -25px;
+  width: 85px;
+  border: 1px solid black;
+  right: 0;
+
 }
