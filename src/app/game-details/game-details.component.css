@@ -9,6 +9,7 @@ img {
 #main {
   margin: 20px;
   width: 99%;
+  font-family: SpaceGrotesk-Light;
 }
 
 .float {
@@ -28,9 +29,10 @@ img {
 
 fieldset {
   position: relative;
+  color: white;
   padding: 10px;
   text-align: center;
-  background-color: white;
+  background: linear-gradient(180deg, rgba(73,90,105,1) 0%, rgba(7,8,8,1) 100%);
   border: 1px solid black !important;
 }
 
@@ -42,17 +44,19 @@ fieldset > legend {
   background-color: black;
   color: white;
   padding: 10px;
-  font-family: PlayFairOnBlack;
+  border: 1px solid white;
 }
 
 fieldset > p {
   font-size: 2.5rem;
   font-weight: bold;
+  font-family: PlayFairOnBlack;
 }
 
 #btnBuy {
   width: 100%;
   border-color: #494F57;
+  color: white;
 }
 
 #btnBuy:active:focus {
@@ -63,16 +67,18 @@ fieldset > p {
 
 #product_welcome {
   border: 1px solid black;
-  font-family: SpaceGrotesk-Light;
-  background-color: white;
+  color: white;
+  background: linear-gradient(45deg, rgba(73,90,105,1) 0%, rgba(7,8,8,1) 100%);
 }
 
 .findMore {
   margin-top: 40px;
+  color: white;
 }
 
 #product_welcome > article > h3 {
   font-size: 2em;
+  color: white;
   font-weight: bold;
   text-decoration-line: underline;
 }

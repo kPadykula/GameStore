@@ -5,21 +5,21 @@
         <div class="col-2">
           <label for="selectCategory">Category</label>
           <select ngModel name="selectCategory" class="form-control" id="selectCategory">
-            <option selected disabled>Select Category</option>
+            <option value="" selected disabled>Select Category</option>
             <option *ngFor="let cat of category">{{ cat }}</option>
           </select>
         </div>
         <div class="col-2">
           <label for="selectDevice">Device</label>
           <select ngModel name="selectDevice" class="form-control" id="selectDevice">
-            <option selected disabled>Select Device</option>
+            <option value="" selected disabled>Select Device</option>
             <option *ngFor="let dev of device">{{ dev }}</option>
           </select>
         </div>
         <div class="col-2">
           <label for="selectDrm">DRM</label>
           <select ngModel name="selectDrm" class="form-control" id="selectDrm">
-            <option selected disabled>Select DRM</option>
+            <option value="" selected disabled>Select DRM</option>
             <option *ngFor="let dr of drm">{{ dr }}</option>
           </select>
         </div>

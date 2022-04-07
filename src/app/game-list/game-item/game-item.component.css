@@ -5,7 +5,7 @@
   margin: 25px 20px;
   display: block;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  background-color: black;
+  background: linear-gradient(45deg, rgba(73,90,105,1) 0%, rgba(7,8,8,1) 100%);
   color: white;
   max-height: 458px;
   transition: 0.5s;

@@ -21,10 +21,11 @@ export class GameItemComponent implements OnInit {
     ''
   );
 
-  constructor() { }
+  constructor() {
+    this.ScrollUp();
+  }
 
   ngOnInit(): void {
-
   }
 
   ScrollUp() {
