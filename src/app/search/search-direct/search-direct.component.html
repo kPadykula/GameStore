@@ -3,7 +3,7 @@
 <div class="container">
   <div class="container-fluid" *ngIf="count">
     We found {{ count }} <span *ngIf="count > 2; then higher else lower"></span><ng-template #higher>games</ng-template><ng-template #lower>game</ng-template>
-    <hr>
+    <hr style="color: white">
   </div>
   <app-game-item
     *ngFor="let game of gamesToShow; index as i;"

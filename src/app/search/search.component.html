@@ -6,32 +6,32 @@
       <div class="col-3" id="searchingArea">
         <form (ngSubmit)="onSearchGame(f)" #f="ngForm">
           <div class="form-group col-12">
-            <label for="selectCategory">Category:</label>
+            <label for="selectCategory">Category</label>
             <select ngModel name="selectCategory" class="form-control" id="selectCategory">
-                  <option selected disabled>Select Category</option>
+                  <option value="" selected disabled>Select Category</option>
                   <option *ngFor="let cat of category">{{ cat }}</option>
             </select>
           </div>
 
           <div class="form-group col-12">
-            <label for="selectDevice">Device:</label>
+            <label for="selectDevice">Device</label>
             <select ngModel name="selectDevice" class="form-control" id="selectDevice">
-              <option selected disabled>Select Device</option>
+              <option value="" selected disabled>Select Device</option>
               <option *ngFor="let dev of device">{{ dev }}</option>
             </select>
           </div>
 
           <div class="form-group col-12">
-            <label for="selectDrm">DRM:</label>
-            <select ngModel name="selectDrm" class="form-control" id="selectDrm">
-              <option selected disabled>Select DRM</option>
+            <label for="selectDrm">DRM</label>
+            <select ngModel name="selectDrm" class="form-control" id="selectDrm" >
+              <option value="" disabled selected>Select DRM</option>
               <option *ngFor="let dr of drm">{{ dr }}</option>
             </select>
           </div>
 
           <div class="row g-2">
             <div class="col-md">
-              <label>Price:</label>
+              <label>Price</label>
               <div class="form-floating">
                 <input ngModel name="priceFrom" type="number" min="0" class="form-control" id="priceFrom" placeholder="0">
                 <label for="priceFrom">From</label>
