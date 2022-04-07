@@ -31,14 +31,12 @@ export class GameDetailsComponent implements OnInit {
               this.games = this.service.getGameByCategory(cat, this.service.getGames());
             }
 
-            console.log(this.games)
-            //@TODO Naprawic wyszukiwanie po kategorii w szczegole
-
+            this.games = this.games.filter((item, index) => {
+              return this.game !== item;
+            });
 
           });
 
-
-        console.log(this.game);
     }else
         this.game = this.game;
   }
