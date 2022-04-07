@@ -8,6 +8,12 @@
   background-color: black;
   color: white;
   max-height: 458px;
+  transition: 0.5s;
+}
+
+.card:hover {
+  border: 1px solid white;
+  transform: scale(105%);
 }
 
 img {
