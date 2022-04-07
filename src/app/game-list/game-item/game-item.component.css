@@ -12,7 +12,8 @@
 }
 
 .card:hover {
-  border: 1px solid white;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border-image-slice: 1;
   transform: scale(105%);
 }
 
