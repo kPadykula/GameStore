@@ -15,11 +15,14 @@ import { SearchComponent } from './search/search.component';
 import { SearchDirectComponent } from './search/search-direct/search-direct.component';
 import {FormsModule} from "@angular/forms";
 import { SearchPanelComponent } from './search/search-direct/search-panel/search-panel.component';
+import { LoginComponent } from './login/login.component';
+import {LoginService} from "./shared/services/login.service";
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'game/:id', component: GameDetailsComponent},
   {path: 'search', component: SearchDirectComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -34,7 +37,8 @@ const appRoutes: Routes = [
         FooterComponent,
         SearchComponent,
         SearchDirectComponent,
-        SearchPanelComponent
+        SearchPanelComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +46,8 @@ const appRoutes: Routes = [
         FormsModule
     ],
   providers: [
-    GameService
+    GameService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })

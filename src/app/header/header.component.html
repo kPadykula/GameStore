@@ -1,19 +1,36 @@
 
 <div class="container-fluid">
-  <a [routerLink]="['/']">
+
     <div class="container">
       <div id="logo">
+
         <div class="row">
-          <div class="col-sm-1 icon">
-            <img [src]="'../assets/images/pad.png'"/>
-          </div>
-          <div class="col-11">
-            <div class="napis">
-              <b>Games<span style="color: red;">S</span>tore</b>
+          <span id="backHome">
+            <div class="col-sm-1 icon">
+              <img [src]="'../assets/images/pad.png'"/>
             </div>
-          </div>
+            <div class="col-10" [routerLink]="['/']">
+              <div class="napis">
+                <b>Games<span style="color: red;">S</span>tore</b>
+              </div>
+            </div>
+          </span>
+            <div class="col-sm-1" >
+              <span *ngIf="!isLogin; then login else logout"></span>
+              <ng-template #login>
+                <div class="login btn" routerLink="login" >
+                  Login
+                </div>
+              </ng-template>
+              <ng-template #logout>
+                <div class="login btn" (click)="onLogout()">
+                  Logout
+                </div>
+              </ng-template>
+
+            </div>
         </div>
       </div>
     </div>
-  </a>
+
 </div>

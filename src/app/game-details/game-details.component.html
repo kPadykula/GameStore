@@ -1,4 +1,4 @@
-<div *ngIf="game" id="tlo">
+<div id="tlo">
   <div class="container-fluid" id="main">
     <div class="row header">
       <div class="col-4" id="product_image">
@@ -40,6 +40,11 @@
         </aside>
       </div>
     </div>
+    <div *ngIf="isLogin === true; then adminPanel"></div>
+      <ng-template #adminPanel>
+        <button class="btn btn-danger">Remove Game</button>
+      </ng-template>
+
     <div class="row findMore">
 <!--      <hr>-->
       <h4>Find more like this!</h4>

@@ -1,0 +1,25 @@
+<div class="container">
+  <form (ngSubmit)="onLogin(f)" #f="ngForm">
+    <div class="row justify-content-center">
+      <div class="d-flex flex-column text-center col-3" id="formColumn">
+        <div class="p-2 loginCol">
+          <div class="form-group">
+            <label for="loginInput">Login</label>
+            <input type="text" ngModel name="loginInput" id="loginInput" class="form-control">
+          </div>
+        </div>
+
+        <div class="p-2">
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input type="password" ngModel name="passwordInput" id="passwordInput" class="form-control">
+          </div>
+        </div>
+
+        <div class="p-2">
+          <button class="btn col-6" id="loginBtn">Login</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

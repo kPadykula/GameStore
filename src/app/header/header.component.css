@@ -21,3 +21,18 @@ img {
 .container-fluid {
   /*background: url("/assets/images/background-color.jpg");*/
 }
+
+.login {
+  color: white;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 20px;
+}
+.container {
+  position: relative;
+}
+#backHome {
+  display: inline-block;
+  max-width: 30%;
+  cursor: pointer;
+}

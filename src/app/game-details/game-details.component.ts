@@ -1,10 +1,11 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Game} from "../shared/models/game.model";
 import {Category} from "../shared/enums/category-enum.model";
 import {Device} from "../shared/enums/device-enum.model";
 import {DRM} from "../shared/enums/drm-enum.model";
 import {GameService} from "../shared/services/game.service";
 import {ActivatedRoute, Params} from "@angular/router";
+import {LoginService} from "../shared/services/login.service";
 
 @Component({
   selector: 'app-game-details',
@@ -14,9 +15,15 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class GameDetailsComponent implements OnInit {
   game: Game = new Game(1,'test',[Category.SandBox],Device.PC, DRM.GOG, '',0,'');
   games: Game[] = [];
+  isLogin: boolean = false;
 
-  constructor(private service: GameService,
-              private route: ActivatedRoute) { }
+  constructor(
+    private service: GameService,
+    private route: ActivatedRoute,
+    private loginService: LoginService
+  ) {
+
+  }
 
   ngOnInit(): void {
     if(this.route.snapshot.params['id']) {
@@ -39,5 +46,12 @@ export class GameDetailsComponent implements OnInit {
 
     }else
         this.game = this.game;
+
+    this.loginService.isLogin.subscribe(val => {
+      this.isLogin = val;
+    });
+
   }
+
+
 }

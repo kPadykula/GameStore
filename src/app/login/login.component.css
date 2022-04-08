@@ -1,0 +1,60 @@
+label {
+  color: white;
+  font-size: 1.5rem;
+}
+#loginBtn {
+  color: white;
+  font-size: 1.5rem;
+}
+
+input[type="text"], input[type="password"] {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+  background-color: rgba(197, 19, 129, 0.3);
+  color: white;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  background-color: rgba(197, 19, 129, 0.3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+}
+
+
+
+#formColumn {
+  margin-top: 50px;
+  padding-bottom: 30px;
+  background: linear-gradient(135deg, rgba(185,75,232,1) 0%, rgba(185,75,232,0.9) 51%, rgba(32,124,229,0.8) 100%);
+  border: 2px solid;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  border-image-slice: 1;
+}
+
+form {
+  flex: content;
+  justify-content: center;
+}
+
+#loginBtn {
+  background-color: transparent;
+  border: 1px solid white;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+#loginBtn:active, #loginBtn:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 0 8px rgba(126, 239, 104, 0.4);
+  border-color: #EE6C6C;
+
+}
+
+#loginBtn:active {
+  transform: scale(105%);
+}
