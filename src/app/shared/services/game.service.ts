@@ -3,7 +3,6 @@ import {Category} from "../enums/category-enum.model";
 import {Device} from "../enums/device-enum.model";
 import {DRM} from "../enums/drm-enum.model";
 import {EventEmitter} from "@angular/core";
-import {find, Subscription} from "rxjs";
 
 export class GameService {
 
@@ -129,6 +128,27 @@ export class GameService {
     this.gamesChanged.emit(this.games.slice());
   }
 
+  removeGame(game: Game) {
+    for (let gameFor of this.games) {
+      if (gameFor === game) {
+        this.games.filter(function(el) {
+          return el != gameFor;
+        });
+        this.gamesChanged.emit(this.games);
+      }
+    }
+  }
+
+  editGame(game: Game) {
+    let gamesToSearch = this.games.slice();
+    for (let gameFor of gamesToSearch) {
+      if (gameFor.id === game.id) {
+        gameFor = game;
+        this.gamesChanged.emit(gamesToSearch);
+      }
+    }
+  }
+
 
   getGameByCategory(categoryToFind: string, games: Game[]) {
     let gamesToSort = games;
@@ -180,8 +200,6 @@ export class GameService {
     });
     return tableToReturn;
   }
-
-
 
   getGameByFilters(categoryToFind: string, deviceToFind: string, drmToFind: string, min: any, max: any) {
     let tableToReturn = this.games.slice();

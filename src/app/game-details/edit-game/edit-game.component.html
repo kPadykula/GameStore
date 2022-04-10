@@ -1,0 +1,43 @@
+<div class="container">
+  <form id="gameForm" #f="ngForm">
+    <div class="row">
+      <div class="col-12">
+        <input type="text" value="{{ game.name }}" id="name" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group col-12">
+          <div class="form-check form-check-inline" *ngFor="let cat of category; index as i; ">
+            <input class="form-check-input" name="checkbox" type="checkbox" id="category{{i}}" value="{{cat}}" [checked]="isChecked(i, cat)">
+            <label class="form-check-label" for="category{{i}}">{{cat}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <select ngModel name="selectDevice" class="form-control" id="selectDevice">
+          <option value="" id="device" selected disabled>{{ game.device }}</option>
+          <option *ngFor="let dev of device">{{ dev }}</option>
+        </select>
+      </div>
+      <div class="col-6">
+        <select ngModel name="selectDrm" id="drm" class="form-control" id="selectDrm" >
+          <option value="" disabled selected>{{ game.DRM }}</option>
+          <option *ngFor="let dr of drm">{{ dr }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <textarea name="description" class="form-control" form="gameForm" id="description" cols="30" rows="10" placeholder="Description">{{ game.description }}</textarea>
+      </div>
+    </div>
+    <div class="row" style="text-align: center">
+      <div class="col-12">
+        <button class="btn btn-success" (click)="onSubmit(f)">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

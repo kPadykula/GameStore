@@ -82,3 +82,12 @@ fieldset > p {
   font-weight: bold;
   text-decoration-line: underline;
 }
+
+#adminPanel {
+  margin-top: 50px;
+}
+
+.btn-panel {
+  width: 250px;
+}
+

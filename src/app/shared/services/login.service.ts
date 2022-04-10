@@ -6,6 +6,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 export class LoginService {
 
   isLogin = new EventEmitter<boolean>();
+  isLoginBool = false;
 
   private Admin: {login: string, password: string} =
     {

@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     console.log(value);
     if(this.loginService.checkLoginAdmin(value.loginInput, value.passwordInput)){
       this.loginService.isLogin.emit(true);
+      this.loginService.isLoginBool = true;
       this.router.navigate(['/'])
 
     }

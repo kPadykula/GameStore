@@ -16,6 +16,7 @@ export class GameDetailsComponent implements OnInit {
   game: Game = new Game(1,'test',[Category.SandBox],Device.PC, DRM.GOG, '',0,'');
   games: Game[] = [];
   isLogin: boolean = false;
+  onEdit: boolean = false;
 
   constructor(
     private service: GameService,
@@ -47,9 +48,16 @@ export class GameDetailsComponent implements OnInit {
     }else
         this.game = this.game;
 
+
+    this.isLogin = this.loginService.isLoginBool;
     this.loginService.isLogin.subscribe(val => {
       this.isLogin = val;
     });
+
+  }
+
+
+  removeGame() {
 
   }
 

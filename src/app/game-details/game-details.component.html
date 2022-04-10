@@ -40,9 +40,21 @@
         </aside>
       </div>
     </div>
-    <div *ngIf="isLogin === true; then adminPanel"></div>
+    <div *ngIf="isLogin === !true; then adminPanel"></div>
       <ng-template #adminPanel>
-        <button class="btn btn-danger">Remove Game</button>
+        <div class="container" id="adminPanel">
+          <div class="row">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+              <label class="btn btn-danger" (click)="removeGame()">
+                <span>Remove Game</span>
+              </label>
+              <label class="btn btn-info" (click)="onEdit = !onEdit">
+                <span>Edit Game</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <app-edit-game [game]="game" [games]="games" *ngIf="onEdit"></app-edit-game>
       </ng-template>
 
     <div class="row findMore">

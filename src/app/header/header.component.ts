@@ -20,5 +20,6 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.loginService.isLogin.emit(false);
+    this.loginService.isLoginBool = false;
   }
 }

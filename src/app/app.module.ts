@@ -17,6 +17,7 @@ import {FormsModule} from "@angular/forms";
 import { SearchPanelComponent } from './search/search-direct/search-panel/search-panel.component';
 import { LoginComponent } from './login/login.component';
 import {LoginService} from "./shared/services/login.service";
+import { EditGameComponent } from './game-details/edit-game/edit-game.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
         SearchComponent,
         SearchDirectComponent,
         SearchPanelComponent,
-        LoginComponent
+        LoginComponent,
+        EditGameComponent
     ],
     imports: [
         BrowserModule,
