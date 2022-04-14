@@ -1,0 +1,21 @@
+<div class="container">
+  <form id="gameForm" #f="ngForm">
+      <div class="row">
+        <div class="col-12">
+          <p>Are you sure, that you want to remove this game?</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-danger" (click)="onYes();">
+            <span>Yes</span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+          <div id="odpowiedz">
+            <p>{{ response }}</p>
+          </div>
+      </div>
+  </form>
+</div>

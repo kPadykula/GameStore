@@ -1,0 +1,11 @@
+.row {
+  margin-top: 10px;
+}
+
+#gameForm {
+  background-color: rgba(116, 58, 213, 0.81);
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 10px;
+}
