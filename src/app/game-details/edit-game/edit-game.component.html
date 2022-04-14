@@ -16,13 +16,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-6">
+      <div class="col-5">
         <select ngModel name="selectDevice" class="form-control" id="selectDevice">
           <option value="" id="device" selected disabled>{{ game.device }}</option>
           <option *ngFor="let dev of device">{{ dev }}</option>
         </select>
       </div>
-      <div class="col-6">
+      <div class="col-2">
+          <input type="text" value="{{ game.price }}" id="price" class="form-control">
+      </div>
+      <div class="col-5">
         <select ngModel name="selectDrm" id="drm" class="form-control" id="selectDrm" >
           <option value="" disabled selected>{{ game.DRM }}</option>
           <option *ngFor="let dr of drm">{{ dr }}</option>

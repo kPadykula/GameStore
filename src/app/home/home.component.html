@@ -1,5 +1,15 @@
 <div id="tlo">
   <app-search></app-search>
+  <span *ngIf="!isLogin; then addItem;"></span>
+  <ng-template #addItem>
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-2">
+          <button class="btn btn-success" id="addItem" [routerLink]="['/add']">Add Game</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
   <app-game-list></app-game-list>
 </div>
 

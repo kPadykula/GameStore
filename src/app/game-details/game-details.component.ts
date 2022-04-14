@@ -17,6 +17,7 @@ export class GameDetailsComponent implements OnInit {
   games: Game[] = [];
   isLogin: boolean = false;
   onEdit: boolean = false;
+  onRemove: boolean = false;
 
   constructor(
     private service: GameService,

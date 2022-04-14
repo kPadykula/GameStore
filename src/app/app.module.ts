@@ -18,12 +18,15 @@ import { SearchPanelComponent } from './search/search-direct/search-panel/search
 import { LoginComponent } from './login/login.component';
 import {LoginService} from "./shared/services/login.service";
 import { EditGameComponent } from './game-details/edit-game/edit-game.component';
+import { RemoveGameComponent } from './game-details/remove-game/remove-game.component';
+import { AddGameComponent } from './game-details/add-game/add-game.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent },
   {path: 'game/:id', component: GameDetailsComponent},
   {path: 'search', component: SearchDirectComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'add', component: AddGameComponent}
 ];
 
 @NgModule({
@@ -40,7 +43,9 @@ const appRoutes: Routes = [
         SearchDirectComponent,
         SearchPanelComponent,
         LoginComponent,
-        EditGameComponent
+        EditGameComponent,
+        RemoveGameComponent,
+        AddGameComponent
     ],
     imports: [
         BrowserModule,

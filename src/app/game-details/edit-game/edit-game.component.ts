@@ -47,6 +47,7 @@ export class EditGameComponent implements OnInit {
     let Drm = this.game.DRM;
     let descriptionEl = <HTMLInputElement> document.getElementById('description');
     let description: string = '';
+    let price = <HTMLInputElement> document.getElementById('price');
     if (values.selectDevice.length > 0) {
       device = values.selectDevice;
     }
@@ -65,7 +66,7 @@ export class EditGameComponent implements OnInit {
       device,
       Drm,
       description,
-      this.game.price,
+      +price.value,
       this.game.imgUrl
     );
 

@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GameService} from "../../../shared/services/game.service";
 import {Category} from "../../../shared/enums/category-enum.model";
 import {Device} from "../../../shared/enums/device-enum.model";

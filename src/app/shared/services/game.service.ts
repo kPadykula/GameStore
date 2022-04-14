@@ -130,8 +130,8 @@ export class GameService {
 
   removeGame(game: Game) {
     for (let gameFor of this.games) {
-      if (gameFor === game) {
-        this.games.filter(function(el) {
+      if (gameFor.id === game.id) {
+        this.games = this.games.filter(function(el) {
           return el != gameFor;
         });
         this.gamesChanged.emit(this.games);
@@ -141,12 +141,12 @@ export class GameService {
 
   editGame(game: Game) {
     let gamesToSearch = this.games.slice();
-    for (let gameFor of gamesToSearch) {
-      if (gameFor.id === game.id) {
-        gameFor = game;
-        this.gamesChanged.emit(gamesToSearch);
-      }
+    for (let i = 0; i < gamesToSearch.length; i++) {
+      if (game.id === gamesToSearch[i].id)
+        gamesToSearch[i] = game;
     }
+    this.games = gamesToSearch;
+    this.gamesChanged.emit(gamesToSearch);
   }
 
 
@@ -215,8 +215,6 @@ export class GameService {
 
 
     tableToReturn = this.getGameByPrice(min, max, tableToReturn);
-
-
     return tableToReturn;
   }
 

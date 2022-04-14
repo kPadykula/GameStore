@@ -16,13 +16,17 @@
 }
 
 #searchingArea {
-  background: linear-gradient(135deg, rgba(185,75,232,1) 0%, rgba(32,124,229,0.9) 100%);
+  background: #3aa8f2;
   height: 350px;
   margin-top: 2%;
   margin-left: 3%;
-  border: 1px solid black;
   border-radius: 5px;
   transition: 0.6s;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-style: solid;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+
 }
 
 #searchingArea:hover {

@@ -17,11 +17,13 @@ export class GameListComponent implements OnInit {
   ngOnInit(): void {
     if (!this.selectedGames)
       this.games = this.gameService.getGames();
-      this.gameService.gamesChanged
-        .subscribe(
-          (games: Game[]) => {
-            this.games = games;
-      });
+
+
+    this.gameService.gamesChanged
+      .subscribe(
+        (games: Game[]) => {
+          this.games = games;
+        });
   }
 
 }
