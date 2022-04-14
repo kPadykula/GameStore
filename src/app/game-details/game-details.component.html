@@ -40,7 +40,7 @@
         </aside>
       </div>
     </div>
-    <div *ngIf="isLogin === !true; then adminPanel"></div>
+    <div *ngIf="isLogin; then adminPanel"></div>
       <ng-template #adminPanel>
         <div class="container" id="adminPanel">
           <div class="row">

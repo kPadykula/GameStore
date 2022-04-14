@@ -78,8 +78,8 @@ export class EditGameComponent implements OnInit {
   }
 
   getCheckedItem() {
-    var checkedBox = document.getElementsByName('checkbox');
-    var checkedCategoryList: Category[] = [];
+    let checkedBox = document.getElementsByName('checkbox');
+    let checkedCategoryList: Category[] = [];
 
     for (let i = 0; i < checkedBox.length; i++) {
       let checkedForSearch = <HTMLInputElement> checkedBox[i];
