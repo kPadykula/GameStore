@@ -2,7 +2,7 @@
 <div class="col-md-4" style="float: left;">
   <div class="card" style="width: 90%;">
     <div id="image">
-      <img [src]="game.imgUrl" alt="{{ game.name + '.img'}}">
+      <img [src]="game.imgUrl" alt="{{ game.name + '.img'}}" (error)="HandleMissingImage($event)">
       <div id="price">
 <!--        <div id="priceImg"></div>-->
         <div id="priceText">{{ game.price + '$' }}</div>

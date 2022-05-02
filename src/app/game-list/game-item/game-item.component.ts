@@ -36,4 +36,8 @@ export class GameItemComponent implements OnInit {
     });
   }
 
+  HandleMissingImage(event: Event) {
+    (event.target as HTMLImageElement).src = "assets/images/validimage.png";
+
+  }
 }
