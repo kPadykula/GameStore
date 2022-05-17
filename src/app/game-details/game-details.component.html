@@ -3,7 +3,7 @@
     <div class="row header">
       <div class="col-4" id="product_image">
         <aside>
-          <img [src]="game.imgUrl" alt="{{ game.name + '.img' }}" class="img-fluid">
+          <img [src]="game.imgUrl" alt="{{ game.name + '.img' }}" class="img-fluid" (error)="HandleMissingImage($event)">
         </aside>
       </div>
       <div class="col-6" id="product_welcome">

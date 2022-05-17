@@ -57,6 +57,10 @@ export class GameDetailsComponent implements OnInit {
 
   }
 
+  HandleMissingImage(event: Event) {
+    (event.target as HTMLImageElement).src = "assets/images/validimage.png";
+
+  }
 
   removeGame() {
 
