@@ -34,7 +34,9 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <input type="text" ngModel name="url" placeholder="Image URL" class="form-control">
+        <div>
+          <input class="btn btn-light" type="file" (change)="onImagePicked($event)">
+        </div>
       </div>
     </div>
     <div class="row">

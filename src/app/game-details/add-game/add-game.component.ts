@@ -19,6 +19,9 @@ export class AddGameComponent implements OnInit {
   drm: DRM[] = Object.values(DRM);
   //@ts-ignore
   game: Game;
+  imageUrl: string = "notFound";
+  //@ts-ignore
+  form: NgForm;
 
   constructor(
     private gameService: GameService,
@@ -29,7 +32,9 @@ export class AddGameComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    let values = form.value;
+    this.form = form;
+
+    let values = this.form.value;
     let gamesList = this.gameService.getGames();
     let category: Category[] = this.getCheckedItem();
     let name = values.name;
@@ -37,7 +42,6 @@ export class AddGameComponent implements OnInit {
     let Drm = values.selectDrm;
     let description = values.description;
     let price = values.price;
-    let url = values.url;
     let id = gamesList.length + 1;
 
     this.game = new Game(
@@ -48,7 +52,7 @@ export class AddGameComponent implements OnInit {
       Drm,
       description,
       price,
-      url
+      this.imageUrl
     )
     gamesList.push(this.game);
     this.gameService.addNewProduct(this.game);
@@ -68,6 +72,12 @@ export class AddGameComponent implements OnInit {
       }
     }
     return checkedCategoryList;
+  }
+
+  onImagePicked(event: Event) {
+    //@ts-ignore
+    const file = (event.target as HTMLInputElement).files[0].name;
+    this.imageUrl = "/assets/images/games/" + file;
   }
 
 }
